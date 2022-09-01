@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="assets/favicon.ico" rel="shortcut icon" />
+  <link rel="stylesheet" href="css/owfont-regular.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <title>momentum</title>
+</head>
+<body>
+  <header class="header">
+    <div class="player">
+      <div class="player-controls">
+        <div class="song-title"></div>
+        <div class="player-settings">
+          <progress type="range" id="progress-bar" min="0" max="" value="0" class="progress-bar audio-bar"></progress>
+          <div class="currentTime"></div>
+          <div class="durationTime"></div>
+        </div>
+        <div class="player-buttons">
+          <button class="play-prev player-icon"></button>
+          <button class="play player-icon"></button>
+          <button class="play-next player-icon"></button>
+          <div class="volume player-icon"></div>
+          <input type="range" id="volumeRange" min="0" max="1" step="0.01" class="range">
+        </div>
+      </div>
+
+      <ul class="play-list"></ul>
+    </div>
+    <div class="weather">
+      <input type="text" class="city" />
+      <i class="weather-icon owf"></i>
+      <div class="weather-error"></div>
+      <div class="description-container">
+        <span class="temperature"></span>
+        <span class="weather-description"></span>
+      </div>
+      <div class="wind"></div>
+      <div class="humidity" data-text-lang="humidity"></div>
+    </div>
+  </header>
+  <main class="main">
+    <div class="slider-icons">
+      <button class="slide-prev slider-icon"></button>
+      <button class="slide-next slider-icon"></button>
+    </div>
+    <time class="time"></time>
+    <date class="date"></date>
+    <div class="greeting">
+      <span class="greeting-text"></span>
+      <input type="text" class="name"/>
+    </div>
+  </main>
+  <footer class="footer">
+    <button class="open-settings"></button>
+    <div class="settings-menu">
+      <div class="laguage-options setting-section">
+        <span>language</span>
+        <select class="setting-select languages">
+          <option value = 'en'>english</option>
+          <option value = 'ru'>russian</option>
+        </select>
+      </div>
+      <div class="time-options setting-section">
+        <span>time</span> 
+        <input type="checkbox" id="time" name="time" class="chekbox-button" checked = 'true'>      
+        <label for="time" data-onlabel="on" data-offlabel="off" class="setting-button"></label>
+      </div>
+      <div class="date-options setting-section">
+        <span>date</span> 
+        <input type="checkbox" id="date" name="date" class="chekbox-button" checked>
+        <label for="date" data-onlabel="on" data-offlabel="off" class="setting-button"></label>
+      </div>
+      <div class="greeting-options setting-section">
+        <span>greeting</span> 
+        <input type="checkbox" id="greeting" name="greeting" class="chekbox-button" checked>
+        <label for="greeting" data-onlabel="on" data-offlabel="off" class="setting-button"></label>
+      </div>
+      <div class="quotes-options setting-section">
+        <span>quotes</span> 
+        <input type="checkbox" id="quotes" name="quotes" class="chekbox-button" checked>
+        <label for="quotes" data-onlabel="on" data-offlabel="off" class="setting-button"></label>
+      </div>
+      <div class="weather-options setting-section">
+        <span>weather</span> 
+        <input type="checkbox" id="weather" name="weather" class="chekbox-button" checked>
+        <label for="weather" data-onlabel="on" data-offlabel="off" class="setting-button"></label>
+      </div>
+      <div class="player-options setting-section">
+        <span>player</span> 
+        <input type="checkbox" id="player" name="player" class="chekbox-button" checked>
+        <label for="player" data-onlabel="on" data-offlabel="off" class="setting-button"></label>
+      </div>
+      <div class="setting-section">
+        <span>background</span> 
+        <select class="setting-select background-options">
+          <option value = 'github'>GitHub</option>
+          <option value = 'flickr'>Flickr</option>
+          <option value = 'unsplash'>Unsplash</option>
+        </select>
+      </div>
+      <div class="setting-section section-tag show-tag">
+        <span>tag</span> 
+        <input type="text" name="tag" id="tag" class="tag">
+      </div>
+    </div>
+    <div class="quotes">
+      <button class="change-quote"></button>      
+      <div class="quote"></div>
+      <div class="author"></div>
+    </div>
+    <button class="open-list"></button>
+    <div class="todo-menu">
+      <ul class="todo-list"></ul>
+      <div class="empty-list">
+        <span>noTodo</span>
+        <button class="empty-list-button">New Todo</button>
+      </div>
+      <form class="add-form">
+        <input type="text" class="add-form-input" tabindex="0" required>
+      </form>
+      <template id="task-template">
+        <li class="todo-list-item">
+          <label>
+            <input type="checkbox" class="todo-list-input">
+            <span></span>
+          </label>
+        </li>
+      </template>
+    </div>
+    
+  </footer>
+  <script type="module" src="./language.js"></script>
+  <script type="module" src="./playList.js"></script>
+  <script type="module" src="script.js"></script>
+</body>
+</html>
